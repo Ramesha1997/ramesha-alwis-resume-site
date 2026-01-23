@@ -29,7 +29,7 @@
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -194,12 +194,12 @@
 
         /* Navigation Bar */
         nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(131, 222, 222, 0.1);
         }
 
         .nav-container {
@@ -233,7 +233,7 @@
 
         .nav-menu a:hover,
         .nav-menu a.active {
-            background: rgba(255,255,255,0.2);
+            background: rgba(8, 2, 69, 0.2);
         }
 
         .hamburger {
@@ -281,16 +281,18 @@
 
         .section-title {
             font-size: 2.5em;
-            color: #667eea;
+            color: #010a33;
             margin-bottom: 30px;
             text-align: center;
         }
 
         /* Home Section */
         #home {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('cover.jpg') center center / cover no-repeat;
+             background-attachment: scroll;
             color: white;
             text-align: center;
+            min-height: 100vh;
         }
 
         .hero h1 {
@@ -337,7 +339,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px  rgba(12, 205, 205, 0.1);
         }
 
         .btn-secondary {
@@ -347,7 +349,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: #667eea;
+            color: #030e3e;
         }
 
         @keyframes fadeInUp {
@@ -361,7 +363,7 @@
             }
         }
 
-        /* About Section */
+       /* About Section */
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -380,7 +382,7 @@
     height: 400px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px  rgba(12, 205, 205, 0.1);
 }
 
 .about-image img {
@@ -392,13 +394,73 @@
 .about-image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 4em;
 }
+/* Mind map top */
+.about-mindmap {
+    width: 100%;
+    max-height: 450px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(12, 205, 205, 0.1);
+    background: white;
+}
+
+.about-mindmap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* full mind map */
+}
+
+/* Bottom layout */
+.about-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Profile photo */
+.about-image.profile {
+    height: 300px;
+}
+
+.about-image.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text */
+.about-text p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image.profile {
+        height: 260px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 
         /* Experience & Education */
         .timeline-item {
@@ -406,14 +468,16 @@
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #010f4e;
+            box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
             transition: all 0.3s;
+
+
         }
 
         .timeline-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 20px  rgba(12, 205, 205, 0.1);
         }
 
         .timeline-header {
@@ -431,7 +495,7 @@
         }
 
         .timeline-company {
-            color: #667eea;
+            color: #010b35;
             font-weight: 500;
         }
 
@@ -465,12 +529,12 @@
     grid-template-columns: 250px 1fr;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
 }
 
 .skill-category h3 {
     background: white;
-    color: #667eea;
+    color: #020d40;
     padding: 30px 20px;
     font-size: 1.2em;
     display: flex;
@@ -490,7 +554,7 @@
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
     color: white;
     padding: 10px 16px;
     border-radius: 8px;
@@ -518,12 +582,13 @@
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
             transition: all 0.3s;
         }
 
         .publication-item:hover {
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 20px  rgba(12, 205, 205, 0.1);
+
         }
 
         .publication-title {
@@ -539,7 +604,7 @@
         }
 
         .publication-venue {
-            color: #667eea;
+            color: #031460;
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -560,19 +625,19 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
             transition: all 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px  rgba(12, 205, 205, 0.1);
         }
 
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -604,14 +669,14 @@
 
         .tech-tag {
             background: #f0f0f0;
-            color: #667eea;
+            color: #010c3d;
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.85em;
         }
 
         .project-links a {
-            color: #667eea;
+            color: #030d3e;
             text-decoration: none;
             margin-right: 15px;
             font-weight: 500;
@@ -650,7 +715,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -688,7 +753,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #010a33;
         }
 
         .form-group textarea {
@@ -697,7 +762,7 @@
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
             color: white;
             padding: 10px 30px;
             border: none;
@@ -711,7 +776,7 @@
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 20px 
         }
 
         /* Responsive Design */
@@ -725,7 +790,7 @@
                 left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                background: linear-gradient(135deg, #4745c8 0%, #010238 100%);
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
@@ -777,7 +842,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">W R Alwis</div>
+            <div class="logo">R Alwis</div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -813,30 +878,37 @@ Designer · Digital Learning Specialist</strong></p>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">ABOUT ME</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            I am an Educational Technology Instructor and Instructional Designer with a strong focus on digital learning
-and learner-centered educational design. I hold a B.Ed. (Hons.) in Information Technology and have experience
-designing and delivering curriculum-aligned ICT instruction across secondary and advanced levels.
-My professional work integrates educational technology, instructional design, and counseling principles to
-create inclusive, supportive, and engaging learning environments. I have contributed to research in online
-learning platforms, AI-supported educational tools, and higher education trends, with presentations at
-international academic symposiums.
-I have also developed digital learning platforms and multimedia educational resources, with a focus on
-improving learner engagement and assessment outcomes. My interests include instructional design, digital
-pedagogy, educational technology innovation, and the responsible integration of technology to support both
-academic achievement and student well-being in global learning contexts.
-                        </p>
-                     </div>   
-                    <div class="about-image">
-                         <img src="Ramesha.jpg" alt="Ramesha Alwis">
-                    </div>
-        </section>
+      <!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">ABOUT ME</h2>
+
+        <!-- TOP: Mind Map (full width) -->
+        <div class="about-mindmap">
+            <img src="mindmap.jpg" alt="Professional Mind Map">
+        </div>
+
+        <!-- BOTTOM: Profile + Text -->
+        <div class="about-content">
+
+            <!-- LEFT: Profile photo -->
+            <div class="about-image profile">
+                <img src="Ramesha.jpg" alt="Ramesha Alwis">
+            </div>
+
+            <!-- RIGHT: About text -->
+            <div class="about-text">
+                <p>
+                    I am an Educational Technology Instructor and Instructional Designer specializing in digital learning and learner-centered design. I hold a B.Ed. (Hons.) in Information Technology and have experience delivering curriculum-aligned ICT instruction across secondary and advanced levels.
+
+                    My work integrates educational technology, instructional design, and counselling principles to create inclusive, engaging learning environments. I have contributed to research on online learning platforms, AI-supported educational tools, and higher education trends, with presentations at international academic symposiums. I also design digital learning platforms and multimedia resources to enhance learner engagement and assessment outcomes.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
         <!-- Experience Section -->
         <section id="experience" class="section">
@@ -853,26 +925,14 @@ EXPERIENCE</h2>
                         <div class="timeline-date"><strong>January 2025 – June 2025</strong></div>
                     </div>
                     <div class="timeline-description">
-                        <ul>
-                            <li>Completed intensive 6-month internship across two leading educational institutions,
-delivering ICT instruction to students from Grade 6 through Advanced Level under
-Ministry of Education supervision.</li>
-                            <li><strong>Key Achievements:</strong></li>
-                            <ul>
-                                <li>Designed and delivered 50+ interactive ICT lesson plans covering programming
-concepts, computer applications, and digital literacy for 200+ students</li>
-                            <li>Achieved measurable improvements in student engagement and assessment
-performance through technology-integrated teaching methods</li>
-                                <li>Taught 7 supervised periods during the internship, covering topics including
-Python programming, HTML/CSS, database fundamentals, and computer
-applications</li>
-                                    <li>Integrated counselling principles to create inclusive, supportive learning
-environments and promote responsible digital citizenship
-</li>
-                                <li>Developed digital learning materials and assessments aligned with national
-curriculum standards</li>
-                                    <li>Mentored students in programming problem-solving, computer applications, and
-extra-curricular ICT projects</li>
+                        
+                                <li>Delivered ICT lessons (Grades 6–A/L) under Ministry of Education supervision</li>
+                            <li>Designed 50+ interactive lesson plans for 200+ students</li>
+                                <li>Taught Python, HTML/CSS, Databases & Computer Applications</li>
+                                    <li>Improved student engagement & assessment performance using EdTech</li>
+                                <li>Created curriculum-aligned digital materials & assessments</li>
+                                    <li>Applied counselling principles for inclusive, supportive classrooms</li>
+                                    <li>Mentored students in programming & ICT projects</li>
                             </ul>
                             
                         </ul>
