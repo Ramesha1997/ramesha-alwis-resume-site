@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramesha Alwis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
+
+        
         * {
             margin: 0;
             padding: 0;
@@ -363,7 +366,264 @@
             }
         }
 
+        /* ============================================
+   EXPERTISE SECTION STYLES - ADD THIS SECTION
+   ============================================ */
+
+/* Expertise Section Background */
+#expertise {
+    background: #0a0a0a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient background for expertise */
+#expertise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+    background-size: 400% 400%;
+    animation: expertiseGradient 15s ease infinite;
+    z-index: 0;
+}
+
+@keyframes expertiseGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+#expertise .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+}
+
+/* Expertise Title */
+#expertise .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #667eea 0%, #eceaef 50%, #760782 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+/* Expertise Subtitle */
+.expertise-subtitle {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+/* Stats Section */
+.expertise-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.expertise-stat-item {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.expertise-stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.expertise-stat-label {
+    color: #a0aec0;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Bento Grid */
+.expertise-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+}
+
+.expertise-bento-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    opacity: 0;
+    animation: expertiseFadeInUp 0.8s ease forwards;
+}
+
+.expertise-bento-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.expertise-bento-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+}
+
+.expertise-bento-item:hover::before {
+    opacity: 1;
+}
+
+/* Grid sizes */
+.expertise-large { grid-column: span 6; }
+.expertise-medium { grid-column: span 4; }
+.expertise-small { grid-column: span 3; }
+
+.expertise-bento-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+.expertise-bento-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.expertise-bento-desc {
+    color: #a0aec0;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.expertise-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expertise-skill-tag {
+    padding: 8px 16px;
+    background: rgba(102, 126, 234, 0.15);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+}
+
+.expertise-skill-tag:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Color themes */
+.expertise-researcher {
+    background: linear-gradient(135deg, rgba(168, 181, 209, 0.05) 0%, rgba(136, 146, 176, 0.05) 100%);
+    border-color: rgba(168, 181, 209, 0.2);
+}
+
+.expertise-counselor {
+    background: linear-gradient(135deg, rgba(245, 213, 200, 0.05) 0%, rgba(232, 196, 180, 0.05) 100%);
+    border-color: rgba(245, 213, 200, 0.2);
+}
+
+.expertise-practitioner {
+    background: linear-gradient(135deg, rgba(184, 230, 213, 0.05) 0%, rgba(149, 213, 178, 0.05) 100%);
+    border-color: rgba(184, 230, 213, 0.2);
+}
+
+.expertise-developer {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(193, 148, 95, 0.05) 100%);
+    border-color: rgba(212, 165, 116, 0.2);
+}
+
+.expertise-instructor {
+    background: linear-gradient(135deg, rgba(168, 197, 209, 0.05) 0%, rgba(143, 175, 197, 0.05) 100%);
+    border-color: rgba(168, 197, 209, 0.2);
+}
+
+/* Animations */
+@keyframes expertiseFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.expertise-bento-item:nth-child(1) { animation-delay: 0.1s; }
+.expertise-bento-item:nth-child(2) { animation-delay: 0.2s; }
+.expertise-bento-item:nth-child(3) { animation-delay: 0.3s; }
+.expertise-bento-item:nth-child(4) { animation-delay: 0.4s; }
+.expertise-bento-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Mobile Responsive for Expertise */
+@media (max-width: 1200px) {
+    .expertise-large, .expertise-medium { grid-column: span 6; }
+}
+
+@media (max-width: 768px) {
+    .expertise-large, .expertise-medium, .expertise-small { grid-column: span 12; }
+    
+    .expertise-bento-item {
+        padding: 30px 20px;
+    }
+    
+    .expertise-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   END OF EXPERTISE SECTION STYLES
+   ============================================ */
+
        /* About Section */
+       #about {
+    background: 
+        linear-gradient(rgba(233, 235, 239, 0.85), rgba(179, 195, 233, 0.85)),
+        url('projects.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 20px;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -373,7 +633,7 @@
 
 .about-text p {
     margin-bottom: 15px;
-    color: #555;
+    color: #080707;
     text-align: center;
 }
 
@@ -428,7 +688,7 @@
 
 /* Profile photo */
 .about-image.profile {
-    height: 300px;
+    height: 400px;
 }
 
 .about-image.profile img {
@@ -439,7 +699,7 @@
 
 /* Text */
 .about-text p {
-    color: #555;
+    color: #010101;
     line-height: 1.7;
 }
 
@@ -450,7 +710,7 @@
     }
 
     .about-image.profile {
-        height: 260px;
+        height: 400px;
     }
 }
 
@@ -463,6 +723,32 @@
 
 
         /* Experience & Education */
+
+          #experience{
+    background: 
+        linear-gradient(rgba(188, 199, 223, 0.85), rgba(112, 121, 143, 0.85)),
+        url('ex.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 20px;
+
+    
+}
+
+  #education{
+    background: 
+        linear-gradient(rgba(211, 218, 233, 0.85), rgba(38, 48, 71, 0.85)),
+        url('edu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 20px;
+}
         .timeline-item {
             background: white;
             padding: 30px;
@@ -518,6 +804,17 @@
         }
 
       /* Skills Section */
+        #skills {
+    background: 
+        linear-gradient( rgba(183, 196, 229, 0.85)),
+        url('skills.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    padding: 100px 20px;
+}
 .skills-grid {
     display: flex;
     flex-direction: column;
@@ -577,8 +874,21 @@
 }
 
         /* Research Section */
+  #research {
+    background: 
+        linear-gradient( rgba(179, 192, 222, 0.85)),
+        url('research.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 20px;
+}
+
+
         .publication-item {
-            background: white;
+            background: rgb(255, 255, 255);
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -593,13 +903,13 @@
 
         .publication-title {
             font-size: 1.2em;
-            color: #333;
+            color: #080808;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         .publication-authors {
-            color: #666;
+            color: #6b5ee5;
             margin-bottom: 10px;
         }
 
@@ -615,6 +925,19 @@
         }
 
         /* Projects Section */
+
+        #projects {
+    background: 
+        linear-gradient(rgba(234, 235, 236, 0.85), rgba(15, 23, 42, 0.85)),
+        url('projects.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 100px 20px;
+}
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -845,6 +1168,7 @@
             <div class="logo">R Alwis</div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
@@ -873,20 +1197,113 @@ Designer · Digital Learning Specialist</strong></p>
 
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View My Work</a>
+                    <a href="#expertise" class="btn btn-secondary">View My Expertise</a>
                 </div>
             </div>
         </section>
+
+        <!-- ============================================
+     EXPERTISE SECTION - ADD THIS ENTIRE SECTION
+     ============================================ -->
+<section id="expertise" class="section">
+    <div class="container">
+        <h2 class="section-title">MY EXPERTISE</h2>
+        <p class="expertise-subtitle">🎯 Bridging Technology, Education & Mental Wellness</p>
+
+        <!-- Stats Section -->
+        <div class="expertise-stats">
+            <div class="expertise-stat-item">
+                <div class="expertise-stat-number">5</div>
+                <div class="expertise-stat-label">Core Specializations</div>
+            </div>
+            <div class="expertise-stat-item">
+                <div class="expertise-stat-number">15+</div>
+                <div class="expertise-stat-label">Expertise Areas</div>
+            </div>
+            <div class="expertise-stat-item">
+                <div class="expertise-stat-number">∞</div>
+                <div class="expertise-stat-label">Passion for Impact</div>
+            </div>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="expertise-bento-grid">
+            <!-- Researcher -->
+            <div class="expertise-bento-item expertise-large expertise-researcher">
+                <div class="expertise-bento-icon">🔬</div>
+                <h3 class="expertise-bento-title">Researcher</h3>
+                <p class="expertise-bento-desc">Advancing knowledge through rigorous investigation and innovative methodologies across multiple domains.</p>
+                <div class="expertise-skill-tags">
+                    <span class="expertise-skill-tag">Educational Research</span>
+                    <span class="expertise-skill-tag">Technical Research</span>
+                    <span class="expertise-skill-tag">Technology & Educational Research</span>
+                </div>
+            </div>
+
+            <!-- Counselor -->
+            <div class="expertise-bento-item expertise-large expertise-counselor">
+                <div class="expertise-bento-icon">💚</div>
+                <h3 class="expertise-bento-title">Counselor</h3>
+                <p class="expertise-bento-desc">Providing compassionate support and evidence-based interventions for mental health and wellbeing.</p>
+                <div class="expertise-skill-tags">
+                    <span class="expertise-skill-tag">Individual & Group Counselling</span>
+                    <span class="expertise-skill-tag">Mental Health Awareness</span>
+                    <span class="expertise-skill-tag">Crisis Intervention</span>
+                    <span class="expertise-skill-tag">Behavioral Support</span>
+                </div>
+            </div>
+
+            <!-- Technical Instructor -->
+            <div class="expertise-bento-item expertise-medium expertise-instructor">
+                <div class="expertise-bento-icon">📚</div>
+                <h3 class="expertise-bento-title">Technical Instructor</h3>
+                <p class="expertise-bento-desc">Empowering learners through innovative pedagogy and curriculum design.</p>
+                <div class="expertise-skill-tags">
+                    <span class="expertise-skill-tag">ICT Instruction (6-A/L)</span>
+                    <span class="expertise-skill-tag">Curriculum Design</span>
+                    <span class="expertise-skill-tag">Online Teaching</span>
+                    <span class="expertise-skill-tag">Learning Outcomes</span>
+                </div>
+            </div>
+
+            <!-- Practitioner -->
+            <div class="expertise-bento-item expertise-medium expertise-practitioner">
+                <div class="expertise-bento-icon">🌱</div>
+                <h3 class="expertise-bento-title">Mental Health Practitioner</h3>
+                <p class="expertise-bento-desc">Specialized in youth mental health intervention and holistic support strategies.</p>
+                <div class="expertise-skill-tags">
+                    <span class="expertise-skill-tag">Youth Intervention</span>
+                    <span class="expertise-skill-tag">Evidence-Based Practice</span>
+                </div>
+            </div>
+
+            <!-- Website Developer -->
+            <div class="expertise-bento-item expertise-medium expertise-developer">
+                <div class="expertise-bento-icon">💻</div>
+                <h3 class="expertise-bento-title">Website Developer</h3>
+                <p class="expertise-bento-desc">Crafting modern, responsive, and user-centric digital experiences.</p>
+                <div class="expertise-skill-tags">
+                    <span class="expertise-skill-tag">Web Design</span>
+                    <span class="expertise-skill-tag">UI/UX</span>
+                     <span class="expertise-skill-tag">HTML, CSS</span>
+                     <span class="expertise-skill-tag"> PHP, Python</span>
+                     <span class="expertise-skill-tag">SQL</span>
+                     <span class="expertise-skill-tag">Git</span>
+    <span class="expertise-skill-tag">GitHub</span>
+    <span class="expertise-skill-tag">Version Control</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================
+     END OF EXPERTISE SECTION
+     ============================================ -->
 
       <!-- About Section -->
 <section id="about" class="section">
     <div class="container">
         <h2 class="section-title">ABOUT ME</h2>
-
-        <!-- TOP: Mind Map (full width) -->
-        <div class="about-mindmap">
-            <img src="mindmap.jpg" alt="Professional Mind Map">
-        </div>
 
         <!-- BOTTOM: Profile + Text -->
         <div class="about-content">
@@ -1218,6 +1635,19 @@ Successfully reduced stigma and increased help-seeking behaviors among participa
         
     }, 1000);
     });
+
+    // ====== ADD THIS EXPERTISE SECTION INTERACTION ======
+// Add click interaction to expertise cards
+document.querySelectorAll('.expertise-bento-item').forEach(card => {
+    card.addEventListener('click', function() {
+        // Add a pulse effect
+        this.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            this.style.transform = 'translateY(-8px)';
+        }, 100);
+    });
+});
+// ===================================================
     
 </script>
 
