@@ -17,8 +17,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: #e8e3e3;
+           
         }
 
         /* Responsive Design */
@@ -32,7 +32,7 @@
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+        background: linear-gradient(135deg, #4a4a4b 0%, #060606 100%);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -197,12 +197,12 @@
 
         /* Navigation Bar */
         nav {
-            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+            background: linear-gradient(135deg, #303032 0%, #212121 100%);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(131, 222, 222, 0.1);
+            box-shadow: 0 2px 10px rgba(70, 72, 72, 0.1);
         }
 
         .nav-container {
@@ -264,6 +264,48 @@
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #000000;
+    min-width: 180px;
+    border-radius: 8px;
+    list-style: none;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
         /* Main Content */
         main {
             margin-top: 70px;
@@ -284,14 +326,15 @@
 
         .section-title {
             font-size: 2.5em;
-            color: #010a33;
+            color: #d7d9e1;
             margin-bottom: 30px;
             text-align: center;
         }
 
         /* Home Section */
         #home {
-            background: url('cover.jpg') center center / cover no-repeat;
+            background:   linear-gradient(rgba(79, 80, 81, 0.85), rgba(14, 1, 1, 0.85)),
+       url('cover.jpg') center center / cover no-repeat;
              background-attachment: scroll;
             color: white;
             text-align: center;
@@ -337,7 +380,7 @@
 
         .btn-primary {
             background: white;
-            color: #667eea;
+            color: #1e1f23;
         }
 
         .btn-primary:hover {
@@ -386,7 +429,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+    background:   linear-gradient(rgba(11, 11, 11, 0.85), rgba(14, 1, 1, 0.85));
     background-size: 400% 400%;
     animation: expertiseGradient 15s ease infinite;
     z-index: 0;
@@ -407,7 +450,7 @@
 #expertise .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    background: linear-gradient(135deg, #667eea 0%, #eceaef 50%, #760782 100%);
+    background: linear-gradient(135deg, #667eea 0%, #eceaef 50%, #0d000e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -424,36 +467,7 @@
     font-weight: 300;
 }
 
-/* Stats Section */
-.expertise-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
 
-.expertise-stat-item {
-    text-align: center;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.expertise-stat-number {
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.expertise-stat-label {
-    color: #a0aec0;
-    font-size: 1rem;
-    margin-top: 10px;
-}
 
 /* Bento Grid */
 .expertise-bento-grid {
@@ -466,14 +480,16 @@
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 40px;
+    border-radius: 18px;
+    padding: 24px;
     position: relative;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     opacity: 0;
     animation: expertiseFadeInUp 0.8s ease forwards;
+
+
 }
 
 .expertise-bento-item::before {
@@ -499,30 +515,25 @@
 }
 
 /* Grid sizes */
-.expertise-large { grid-column: span 6; }
-.expertise-medium { grid-column: span 4; }
-.expertise-small { grid-column: span 3; }
+.expertise-large { grid-column: span 3; }
+.expertise-medium { grid-column: span 3; }
+.expertise-small { grid-column: span 2; }
+
+
 
 .expertise-bento-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    display: inline-block;
-    filter: drop-shadow(0 0 20px currentColor);
+    font-size: 2.4rem;
+    margin-bottom: 12px;
 }
 
 .expertise-bento-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #fff;
+    font-size: 1.4rem;
 }
 
 .expertise-bento-desc {
-    color: #a0aec0;
-    line-height: 1.7;
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
+
 
 .expertise-skill-tags {
     display: flex;
@@ -590,20 +601,33 @@
 .expertise-bento-item:nth-child(4) { animation-delay: 0.4s; }
 .expertise-bento-item:nth-child(5) { animation-delay: 0.5s; }
 
-/* Mobile Responsive for Expertise */
-@media (max-width: 1200px) {
-    .expertise-large, .expertise-medium { grid-column: span 6; }
-}
-
 @media (max-width: 768px) {
-    .expertise-large, .expertise-medium, .expertise-small { grid-column: span 12; }
-    
-    .expertise-bento-item {
-        padding: 30px 20px;
+    .expertise-bento-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px;
     }
-    
-    .expertise-stats {
-        grid-template-columns: 1fr;
+
+    .expertise-large,
+    .expertise-medium,
+    .expertise-small {
+        grid-column: span 1;
+    }
+
+    .expertise-bento-item {
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .expertise-bento-title {
+        font-size: 1.1rem;
+    }
+
+    .expertise-bento-desc {
+        font-size: 0.85rem;
+    }
+
+    .expertise-bento-icon {
+        font-size: 2rem;
     }
 }
 
@@ -614,7 +638,7 @@
        /* About Section */
        #about {
     background: 
-        linear-gradient(rgba(233, 235, 239, 0.85), rgba(179, 195, 233, 0.85)),
+        linear-gradient(rgba(47, 47, 48, 0.85), rgba(15, 15, 15, 0.85)),
         url('projects.jpg');
     background-size: cover;
     background-position: center;
@@ -633,7 +657,7 @@
 
 .about-text p {
     margin-bottom: 15px;
-    color: #080707;
+    color: #f9f4f4;
     text-align: center;
 }
 
@@ -642,7 +666,7 @@
     height: 400px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px  rgba(12, 205, 205, 0.1);
+    box-shadow: 0 10px 30px  rgba(222, 227, 227, 0.1);
 }
 
 .about-image img {
@@ -654,7 +678,7 @@
 .about-image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+    background: linear-gradient(135deg, #4a4a4b 0%, #060606 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -699,7 +723,7 @@
 
 /* Text */
 .about-text p {
-    color: #010101;
+    color: #faf9f9;
     line-height: 1.7;
 }
 
@@ -726,7 +750,7 @@
 
           #experience{
     background: 
-        linear-gradient(rgba(188, 199, 223, 0.85), rgba(112, 121, 143, 0.85)),
+          linear-gradient(rgba(47, 47, 48, 0.85), rgba(15, 15, 15, 0.85)),
         url('ex.jpg');
     background-size: cover;
     background-position: center;
@@ -739,9 +763,9 @@
 }
 
   #education{
-    background: 
-        linear-gradient(rgba(211, 218, 233, 0.85), rgba(38, 48, 71, 0.85)),
-        url('edu.jpg');
+      background: 
+        linear-gradient(rgba(67, 67, 69, 0.85), rgba(5, 5, 5, 0.85)),
+        url('projects.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -750,12 +774,12 @@
     padding: 100px 20px;
 }
         .timeline-item {
-            background: white;
+            background: rgb(16, 16, 16);
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border-left: 4px solid #010f4e;
-            box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
+            border-left: 4px solid #d6dae9;
+            box-shadow: 0 2px 10px  rgba(97, 98, 98, 0.1);
             transition: all 0.3s;
 
 
@@ -776,22 +800,22 @@
 
         .timeline-title {
             font-size: 1.3em;
-            color: #333;
+            color: #f2eeee;
             font-weight: 600;
         }
 
         .timeline-company {
-            color: #010b35;
+            color: #eeeff2;
             font-weight: 500;
         }
 
         .timeline-date {
-            color: #0c0c0c;
+            color: #f9f3f3;
             font-size: 0.9em;
         }
 
         .timeline-description {
-            color: #100f0f;
+            color: #f0e9e9;
         }
 
         .timeline-description ul {
@@ -803,16 +827,18 @@
             margin-bottom: 8px;
         }
 
-      /* Skills Section */
-        #skills {
-    background: 
-        linear-gradient( rgba(183, 196, 229, 0.85)),
-        url('skills.jpg');
+        
+    /* Skills Section */
+        
+   #skills {
+      background: 
+          linear-gradient(rgba(47, 47, 48, 0.85), rgba(15, 15, 15, 0.85)),
+        url('ex.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    
+    color: white;
     padding: 100px 20px;
 }
 .skills-grid {
@@ -830,8 +856,8 @@
 }
 
 .skill-category h3 {
-    background: white;
-    color: #020d40;
+    background: rgb(15, 14, 14);
+    color: #eeeff5;
     padding: 30px 20px;
     font-size: 1.2em;
     display: flex;
@@ -842,7 +868,7 @@
 }
 
 .skill-tags {
-    background: #f5f5f5;
+    background: #444343;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -851,7 +877,7 @@
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+    background: linear-gradient( #0b0b0b 100%);
     color: white;
     padding: 10px 16px;
     border-radius: 8px;
@@ -872,12 +898,11 @@
         padding: 20px;
     }
 }
-
         /* Research Section */
   #research {
-    background: 
-        linear-gradient( rgba(179, 192, 222, 0.85)),
-        url('research.jpg');
+     background: 
+          linear-gradient(rgba(47, 47, 48, 0.85), rgba(15, 15, 15, 0.85)),
+        url('projects.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -888,7 +913,7 @@
 
 
         .publication-item {
-            background: rgb(255, 255, 255);
+            background: rgb(10, 10, 10);
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -903,24 +928,24 @@
 
         .publication-title {
             font-size: 1.2em;
-            color: #080808;
+            color: #f5efef;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         .publication-authors {
-            color: #6b5ee5;
+            color: #3a3a3b;
             margin-bottom: 10px;
         }
 
         .publication-venue {
-            color: #031460;
+            color: #515256;
             font-weight: 500;
             margin-bottom: 10px;
         }
 
         .publication-abstract {
-            color: #555;
+            color: #fef9f9;
             margin-top: 15px;
         }
 
@@ -928,7 +953,7 @@
 
         #projects {
     background: 
-        linear-gradient(rgba(234, 235, 236, 0.85), rgba(15, 23, 42, 0.85)),
+        linear-gradient(rgba(83, 84, 84, 0.85), rgba(5, 5, 5, 0.85)),
         url('projects.jpg');
     background-size: cover;
     background-position: center;
@@ -945,10 +970,10 @@
         }
 
         .project-card {
-            background: white;
+            background: rgb(22, 22, 22);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px  rgba(12, 205, 205, 0.1);
+            box-shadow: 0 2px 10px  rgba(7, 7, 7, 0.1);
             transition: all 0.3s;
         }
 
@@ -960,7 +985,7 @@
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+            background: linear-gradient(135deg, #3f3f40 0%, #070707 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -974,12 +999,12 @@
 
         .project-title {
             font-size: 1.3em;
-            color: #333;
+            color: #fdf9f9;
             margin-bottom: 10px;
         }
 
         .project-description {
-            color: #555;
+            color: #f8f6f6;
             margin-bottom: 15px;
         }
 
@@ -992,14 +1017,14 @@
 
         .tech-tag {
             background: #f0f0f0;
-            color: #010c3d;
+            color: #1c1c1c;
             padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.85em;
         }
 
         .project-links a {
-            color: #030d3e;
+            color: #0e0e0f;
             text-decoration: none;
             margin-right: 15px;
             font-weight: 500;
@@ -1011,8 +1036,15 @@
 
         /* Contact Section */
         #contact {
-            background: white;
-        }
+         background: 
+        linear-gradient(rgba(49, 50, 50, 0.85), rgba(15, 15, 15, 0.85)),
+        url('projects.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(11, 11, 11);
+    padding: 100px 20px;}
 
         .contact-container {
             display: grid;
@@ -1038,7 +1070,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
+            background: linear-gradient(135deg, #131160 0%, #010238 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1053,54 +1085,8 @@
             gap: 20px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
+       
 
-        .form-group label {
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #010a33;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #1c1b6c 0%, #010238 100%);
-            color: white;
-            padding: 10px 30px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px 
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -1113,7 +1099,7 @@
                 left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background: linear-gradient(135deg, #4745c8 0%, #010238 100%);
+                background: linear-gradient(135deg, #3d3d3e 0%, #060606 100%);
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
@@ -1166,17 +1152,35 @@
     <nav>
         <div class="nav-container">
             <div class="logo">R Alwis</div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <ul class="nav-menu" id="navMenu">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#about">About</a></li>
+
+    <!-- Career Dropdown -->
+    <li class="dropdown">
+        <a href="#">Career ▾</a>
+        <ul class="dropdown-menu">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </li>
+
+    <!-- Work Dropdown -->
+    <li class="dropdown">
+        <a href="#">Work ▾</a>
+        <ul class="dropdown-menu">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </li>
+</ul>
+
+    </li>
+
+</ul>
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -1210,21 +1214,7 @@ Designer · Digital Learning Specialist</strong></p>
         <h2 class="section-title">MY EXPERTISE</h2>
         <p class="expertise-subtitle">🎯 Bridging Technology, Education & Mental Wellness</p>
 
-        <!-- Stats Section -->
-        <div class="expertise-stats">
-            <div class="expertise-stat-item">
-                <div class="expertise-stat-number">5</div>
-                <div class="expertise-stat-label">Core Specializations</div>
-            </div>
-            <div class="expertise-stat-item">
-                <div class="expertise-stat-number">15+</div>
-                <div class="expertise-stat-label">Expertise Areas</div>
-            </div>
-            <div class="expertise-stat-item">
-                <div class="expertise-stat-number">∞</div>
-                <div class="expertise-stat-label">Passion for Impact</div>
-            </div>
-        </div>
+     
 
         <!-- Bento Grid -->
         <div class="expertise-bento-grid">
@@ -1232,7 +1222,6 @@ Designer · Digital Learning Specialist</strong></p>
             <div class="expertise-bento-item expertise-large expertise-researcher">
                 <div class="expertise-bento-icon">🔬</div>
                 <h3 class="expertise-bento-title">Researcher</h3>
-                <p class="expertise-bento-desc">Advancing knowledge through rigorous investigation and innovative methodologies across multiple domains.</p>
                 <div class="expertise-skill-tags">
                     <span class="expertise-skill-tag">Educational Research</span>
                     <span class="expertise-skill-tag">Technical Research</span>
@@ -1244,7 +1233,6 @@ Designer · Digital Learning Specialist</strong></p>
             <div class="expertise-bento-item expertise-large expertise-counselor">
                 <div class="expertise-bento-icon">💚</div>
                 <h3 class="expertise-bento-title">Counselor</h3>
-                <p class="expertise-bento-desc">Providing compassionate support and evidence-based interventions for mental health and wellbeing.</p>
                 <div class="expertise-skill-tags">
                     <span class="expertise-skill-tag">Individual & Group Counselling</span>
                     <span class="expertise-skill-tag">Mental Health Awareness</span>
@@ -1257,7 +1245,6 @@ Designer · Digital Learning Specialist</strong></p>
             <div class="expertise-bento-item expertise-medium expertise-instructor">
                 <div class="expertise-bento-icon">📚</div>
                 <h3 class="expertise-bento-title">Technical Instructor</h3>
-                <p class="expertise-bento-desc">Empowering learners through innovative pedagogy and curriculum design.</p>
                 <div class="expertise-skill-tags">
                     <span class="expertise-skill-tag">ICT Instruction (6-A/L)</span>
                     <span class="expertise-skill-tag">Curriculum Design</span>
@@ -1270,7 +1257,6 @@ Designer · Digital Learning Specialist</strong></p>
             <div class="expertise-bento-item expertise-medium expertise-practitioner">
                 <div class="expertise-bento-icon">🌱</div>
                 <h3 class="expertise-bento-title">Mental Health Practitioner</h3>
-                <p class="expertise-bento-desc">Specialized in youth mental health intervention and holistic support strategies.</p>
                 <div class="expertise-skill-tags">
                     <span class="expertise-skill-tag">Youth Intervention</span>
                     <span class="expertise-skill-tag">Evidence-Based Practice</span>
@@ -1281,7 +1267,6 @@ Designer · Digital Learning Specialist</strong></p>
             <div class="expertise-bento-item expertise-medium expertise-developer">
                 <div class="expertise-bento-icon">💻</div>
                 <h3 class="expertise-bento-title">Website Developer</h3>
-                <p class="expertise-bento-desc">Crafting modern, responsive, and user-centric digital experiences.</p>
                 <div class="expertise-skill-tags">
                     <span class="expertise-skill-tag">Web Design</span>
                     <span class="expertise-skill-tag">UI/UX</span>
@@ -1343,14 +1328,13 @@ EXPERIENCE</h2>
                     </div>
                     <div class="timeline-description">
                         
-                                <li>Delivered ICT lessons (Grades 6–A/L) under Ministry of Education supervision</li>
-                            <li>Designed 50+ interactive lesson plans for 200+ students</li>
-                                <li>Taught Python, HTML/CSS, Databases & Computer Applications</li>
+                                <li>Taught ICT (Grades 6–A/L), including Python, HTML/CSS & Databases</li>
+                            <li>Created 50+ interactive lesson plans for 200+ students</li>
+                                <li>Improved student engagement using EdTech tools</li>
                                     <li>Improved student engagement & assessment performance using EdTech</li>
-                                <li>Created curriculum-aligned digital materials & assessments</li>
-                                    <li>Applied counselling principles for inclusive, supportive classrooms</li>
-                                    <li>Mentored students in programming & ICT projects</li>
-                            </ul>
+                                <li>Developed digital learning materials & assessments</li>
+                                    <li>Mentored students in programming and ICT projects</li>
+                                    </ul>
                             
                         </ul>
                     </div>
@@ -1411,10 +1395,8 @@ EXPERIENCE</h2>
             <div class="skill-category">
                 <h3>Educational Technology</h3>
                 <ul class="skill-tags">
-                    <li class="skill-tag">Online Teaching & Learner Engagement</li>
                     <li class="skill-tag">Curriculum & Lesson Planning</li>
                     <li class="skill-tag">Assessment Design & Evaluation</li>
-                    <li class="skill-tag">Learning Management Systems</li>
                     <li class="skill-tag">Educational Research & Data Analysis</li>
                 </ul>
             </div>
@@ -1423,10 +1405,9 @@ EXPERIENCE</h2>
                 <h3>Technical Skills</h3>
                 <ul class="skill-tags">
                     <li class="skill-tag">HTML, CSS, PHP, Python, SQL</li>
-                    <li class="skill-tag">Visual Studio/VS Code</li>
                     <li class="skill-tag">Cisco Packet Tracer</li>
                     <li class="skill-tag">Audacity & Adobe Premiere Pro</li>
-                    <li class="skill-tag">MS Office & Google Workspace</li>
+
                 </ul>
             </div>
 
@@ -1434,8 +1415,6 @@ EXPERIENCE</h2>
                 <h3>Counselling & Student Support</h3>
                 <ul class="skill-tags">
                     <li class="skill-tag">Individual & Group Counselling</li>
-                    <li class="skill-tag">Mental Health Awareness</li>
-                    <li class="skill-tag">Crisis Intervention</li>
                     <li class="skill-tag">Behavioral Support</li>
                     <li class="skill-tag">Emotional Regulation Strategies</li>
                 </ul>
@@ -1516,7 +1495,7 @@ Successfully reduced stigma and increased help-seeking behaviors among participa
                     <!-- Contact Section -->
 <section id="contact" class="section">
     <div class="container">
-        <h2 class="section-title">CONTACT ME</h2>
+        <h2 class="section-title">CONTACT</h2>
         <div class="contact-container">
             <div class="contact-info">
                 <div class="contact-item">
@@ -1552,27 +1531,7 @@ Successfully reduced stigma and increased help-seeking behaviors among participa
                 </div>
             </div>
 
-            <div class="contact-form">
-                <h3 style="color: #667eea; margin-bottom: 20px;">Send Me a Message</h3>
-                <form action="https://formspree.io/f/mbddlnvv" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
+         
         </div>
     </div>
 </section>
@@ -1648,6 +1607,16 @@ document.querySelectorAll('.expertise-bento-item').forEach(card => {
     });
 });
 // ===================================================
+
+document.querySelectorAll('.dropdown > a').forEach(drop => {
+    drop.addEventListener('click', function(e) {
+        if (window.innerWidth < 768) {
+            e.preventDefault();
+            this.nextElementSibling.classList.toggle('show');
+        }
+    });
+});
+
     
 </script>
 
